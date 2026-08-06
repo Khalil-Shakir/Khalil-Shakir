@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1280" height="740" viewBox="0 0 1280 740" role="img" aria-label="Khalil Shakir — AI Automation Engineer banner">
+  <defs>
+    <!-- Olive / Sage palette -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2e341c"/>
+      <stop offset="50%" stop-color="#3b4423"/>
+      <stop offset="100%" stop-color="#4a5630"/>
+    </linearGradient>
+    <linearGradient id="nameGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#b7c99a"/>
+      <stop offset="50%" stop-color="#8ea675"/>
+      <stop offset="100%" stop-color="#c9d9ae"/>
+    </linearGradient>
+    <linearGradient id="scannerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="rgba(183,201,154,0)" />
+      <stop offset="50%" stop-color="rgba(183,201,154,0.9)" />
+      <stop offset="100%" stop-color="rgba(183,201,154,0)" />
+    </linearGradient>
+    <radialGradient id="orbG1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(200,220,170,0.35)"/>
+      <stop offset="100%" stop-color="rgba(200,220,170,0)"/>
+    </radialGradient>
+    <radialGradient id="orbG2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(240,230,200,0.25)"/>
+      <stop offset="100%" stop-color="rgba(240,230,200,0)"/>
+    </radialGradient>
+    <radialGradient id="avatarGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(183,201,154,0.55)"/>
+      <stop offset="70%" stop-color="rgba(183,201,154,0.12)"/>
+      <stop offset="100%" stop-color="rgba(183,201,154,0)"/>
+    </radialGradient>
+    <radialGradient id="hearts" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(235,215,160,0.9)"/>
+      <stop offset="100%" stop-color="rgba(235,215,160,0)"/>
+    </radialGradient>
+
+    <!-- Clip for the character reveal & scanner -->
+    <clipPath id="bannerClip">
+      <rect x="0" y="0" width="1280" height="740" rx="28" ry="28"/>
+    </clipPath>
+    <clipPath id="charClip">
+      <rect x="0" y="0" width="1280" height="740" rx="28" ry="28"/>
+    </clipPath>
+
+    <!-- Soft glow filter -->
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&amp;family=Caveat:wght@700&amp;display=swap');
+      text { font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace; }
+      .script { font-family: 'Caveat', 'Brush Script MT', cursive; }
+
+      /* ---------- Cursor blink ---------- */
+      .cursor { animation: blink 1s steps(1) infinite; }
+      @keyframes blink { 50% { opacity: 0; } }
+
+      /* ---------- Terminal typing (staggered reveals) ---------- */
+      .type-cmd span, .type-line span { opacity: 0; animation: typeIn .04s linear forwards; }
+      @keyframes typeIn { to { opacity: 1; } }
+
+      /* ---------- Name letters pop ---------- */
+      .name-letter { opacity: 0; animation: pop .5s cubic-bezier(.17,.89,.32,1.28) forwards; }
+      @keyframes pop { 0% { opacity: 0; transform: translateY(22px) scale(.4); } 60% { opacity: 1; transform: translateY(-4px) scale(1.08); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
+
+      /* ---------- Cycling roles ---------- */
+      .role-cycle { animation: roleCycle 12s infinite; }
+      @keyframes roleCycle {
+        0%   { opacity: 0; transform: translateY(12px); }
+        4%   { opacity: 1; transform: translateY(0); }
+        28%  { opacity: 1; }
+        32%  { opacity: 0; transform: translateY(-12px); }
+        100% { opacity: 0; }
+      }
+
+      /* ---------- Typed quote ---------- */
+      .quote-caret { animation: caretBlink 0.8s steps(1) infinite; }
+      @keyframes caretBlink { 50% { opacity: 0; } }
+
+      /* ---------- Tech pills ---------- */
+      .pill { opacity: 0; transform: translateY(10px) scale(.9); animation: pillIn .5s ease forwards; }
+      @keyframes pillIn { to { opacity: 1; transform: translateY(0) scale(1); } }
+      .pill:hover { filter: drop-shadow(0 0 8px rgba(183,201,154,.9)); }
+      .pill rect { transition: fill .25s; }
+      .pill:hover rect { fill: #57653c; }
+
+      /* ---------- About Me ---------- */
+      .about-line { opacity: 0; animation: fadeUp .6s ease forwards; }
+      @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+      /* ---------- Stats bar ---------- */
+      .stat-bar { fill: #57653c; transition: fill .3s; }
+      .stat-bar:hover { fill: #8ea675; }
+      .bar-fill { transform-origin: 0 50%; animation: growBar 1.6s ease-out forwards; }
+      @keyframes growBar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+      /* ---------- Code editor card ---------- */
+      .code-line { opacity: 0; animation: codeIn .35s ease forwards; }
+      @keyframes codeIn { from { opacity: 0; transform: translateX(-8px); } to { opacity: 1; transform: translateX(0); } }
+      .code-caret { animation: caretBlink 0.7s steps(1) infinite; }
+
+      /* ---------- Neon sign ---------- */
+      .neon { opacity: 0; animation: flicker 8s ease forwards; }
+      @keyframes flicker {
+        0% { opacity: 0; } 78% { opacity: 0; }
+        80% { opacity: 1; } 82% { opacity: .4; } 84% { opacity: 1; } 86% { opacity: .6; }
+        88% { opacity: 1; } 100% { opacity: 1; }
+      }
+
+      /* ---------- Floating / ambient ---------- */
+      .float-heart { animation: floatUp 6s ease-in infinite; opacity: 0; }
+      @keyframes floatUp { 0% { opacity: 0; transform: translateY(0) scale(.6); } 20% { opacity: .8; } 100% { opacity: 0; transform: translateY(-320px) scale(1.1); } }
+      .sparkle { animation: twinkle 2.4s ease-in-out infinite; }
+      @keyframes twinkle { 0%,100% { opacity: 0; } 50% { opacity: 1; } }
+      .rise { animation: rise 7s linear infinite; opacity: 0; }
+      @keyframes rise { 0% { opacity: 0; transform: translateY(0); } 15% { opacity: .6; } 100% { opacity: 0; transform: translateY(-500px); } }
+      .orb { animation: pulse 6s ease-in-out infinite; }
+      @keyframes pulse { 0%,100% { transform: scale(1); opacity: .7; } 50% { transform: scale(1.3); opacity: 1; } }
+      .orb2 { animation: pulse 8s ease-in-out infinite; animation-delay: 2s; }
+
+      /* ---------- Hologram reveal ---------- */
+      .holo-scan { animation: holoScan 2.4s cubic-bezier(.2,.7,.3,1) forwards; }
+      @keyframes holoScan { 0% { transform: translateY(0); } 100% { transform: translateY(740px); } }
+      .holo-reveal { clip-path: inset(0 0 100% 0); animation: holoReveal 2.4s cubic-bezier(.2,.7,.3,1) forwards; }
+      @keyframes holoReveal { 0% { clip-path: inset(0 0 100% 0); } 100% { clip-path: inset(0 0 0 0); } }
+      .holo-line { opacity: 0; animation: holoLine 2.4s linear forwards; }
+      @keyframes holoLine { 0% { opacity: 0; } 30% { opacity: 1; } 70% { opacity: 1; } 100% { opacity: 0; } }
+
+      /* ---------- Continuous scanner ---------- */
+      .scanner { animation: scanLoop 3.5s linear infinite; animation-delay: 2.4s; opacity: 0; }
+      @keyframes scanLoop { 0% { transform: translateY(-80px); opacity: 0; } 6% { opacity: 1; } 94% { opacity: 1; } 100% { transform: translateY(740px); opacity: 0; } }
+      .scanner-beam { opacity: 0; animation: scanLoop 3.5s linear infinite; animation-delay: 2.4s; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="740" fill="url(#bgGrad)"/>
+
+  <!-- Ambient orbs -->
+  <g class="orb"><circle cx="180" cy="620" r="220" fill="url(#orbG1)"/></g>
+  <g class="orb2"><circle cx="1120" cy="140" r="260" fill="url(#orbG2)"/></g>
+
+  <!-- ================================================================
+       CHARACTER — with hologram formation reveal + continuous scanner
+       IMAGE PLACEHOLDER: replace the IMAGE_B64 value below
+  ================================================================= -->
+  <g clip-path="url(#charClip)">
+    <!-- Character image (base64 PNG, no background). Revealed top-to-bottom by holo-reveal -->
+    <g class="holo-reveal">
+      <!-- GLOW RING behind avatar -->
+      <circle cx="1040" cy="330" r="150" fill="url(#avatarGlow)"/>
+      <circle cx="1040" cy="330" r="96" fill="none" stroke="#b7c99a" stroke-width="2" opacity="0.5">
+        <animate attributeName="r" values="96;104;96" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.5;0.2;0.5" dur="4s" repeatCount="indefinite"/>
+      </circle>
+      <!-- IMAGE_B64 -->
+      <image x="940" y="230" width="200" height="200" preserveAspectRatio="xMidYMid slice" xlink:href="data:image/png;base64,IMAGE_B64"/>
+    </g>
+
+    <!-- Hologram formation scan line (one-time, leads the reveal) -->
+    <rect x="0" y="0" width="1280" height="6" fill="url(#scannerGrad)" class="holo-line">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 740" dur="2.4s" fill="freeze" calcMode="spline" keySplines="0.2 0.7 0.3 1" keyTimes="0;1"/>
+    </rect>
+
+    <!-- Full-width horizontal scanner sweeping continuously every 3.5s -->
+    <g class="scanner" clip-path="url(#bannerClip)">
+      <rect x="0" y="0" width="1280" height="5" fill="#b7c99a" opacity="0.8"/>
+      <rect x="0" y="5" width="1280" height="42" fill="url(#scannerGrad)" opacity="0.4"/>
+    </g>
+  </g>
+
+  <!-- ================================================================
+       TERMINAL
+  ================================================================= -->
+  <g>
+    <rect x="50" y="42" width="520" height="120" rx="14" fill="#23281a" stroke="#57653c" stroke-width="2"/>
+    <!-- Title bar -->
+    <circle cx="78" cy="66" r="7" fill="#e07a6a"/><circle cx="102" cy="66" r="7" fill="#e0c06a"/><circle cx="126" cy="66" r="7" fill="#7ac07a"/>
+    <text x="150" y="71" fill="#8ea675" font-size="14">zsh — user@dev</text>
+    <!-- Command line -->
+    <text x="72" y="112" fill="#b7c99a" font-size="22" class="type-cmd">
+      <tspan>user@dev :~ $</tspan> <tspan fill="#f1e7d0">cat README.md</tspan>
+      <animate attributeName="opacity" values="0;1" dur="0.4s" fill="freeze"/>
+    </text>
+    <text x="72" y="144" fill="#b7c99a" font-size="22" class="cursor" opacity="0">
+      <animate attributeName="opacity" values="0;1" dur="0.6s" begin="2.6s" fill="freeze"/>
+    </text>
+  </g>
+
+  <!-- ================================================================
+       NAME — script font, gradient, letters pop one by one
+  ================================================================= -->
+  <!-- To guarantee identical rendering everywhere, the name is drawn from
+       vector outlines. A placeholder path is used here; see notes. -->
+  <g transform="translate(70, 250)">
+    <text x="0" y="0" class="script" font-size="86" fill="url(#nameGrad)" font-weight="700">
+      <tspan class="name-letter">K</tspan><tspan class="name-letter" style="animation-delay:.08s">h</tspan><tspan class="name-letter" style="animation-delay:.16s">a</tspan><tspan class="name-letter" style="animation-delay:.24s">l</tspan><tspan class="name-letter" style="animation-delay:.32s">i</tspan><tspan class="name-letter" style="animation-delay:.40s">l</tspan>
+      <tspan x="0" y="95" class="name-letter" style="animation-delay:.48s">S</tspan><tspan class="name-letter" style="animation-delay:.56s">h</tspan><tspan class="name-letter" style="animation-delay:.64s">a</tspan><tspan class="name-letter" style="animation-delay:.72s">k</tspan><tspan class="name-letter" style="animation-delay:.80s">i</tspan><tspan class="name-letter" style="animation-delay:.88s">r</tspan>
+    </text>
+  </g>
+
+  <!-- ================================================================
+       CYCLING ROLE TITLES
+  ================================================================= -->
+  <g transform="translate(72, 405)">
+    <text x="0" y="0" font-size="34" fill="#c9d9ae" class="role-cycle">
+      <tspan x="0" y="0">AI Automation Engineer</tspan>
+    </text>
+    <text x="0" y="0" font-size="34" fill="#c9d9ae" class="role-cycle" style="animation-delay:4s">
+      <tspan x="0" y="0">Python Developer</tspan>
+    </text>
+    <text x="0" y="0" font-size="34" fill="#c9d9ae" class="role-cycle" style="animation-delay:8s">
+      <tspan x="0" y="0">Mobile App Developer</tspan>
+    </text>
+  </g>
+
+  <!-- ================================================================
+       TYPED QUOTE BOX
+  ================================================================= -->
+  <g>
+    <rect x="70" y="452" width="640" height="56" rx="10" fill="#23281a" stroke="#57653c" stroke-width="1.5" opacity="0.9"/>
+    <text x="92" y="486" fill="#e0c96a" font-size="20" class="script">
+      "Letting the inner creativity shine"
+      <animate attributeName="opacity" values="0;1" dur="0.8s" begin="2.2s" fill="freeze"/>
+    </text>
+  </g>
+
+  <!-- ================================================================
+       TECH STACK PILLS
+  ================================================================= -->
+  <g transform="translate(70, 540)">
+    <g class="pill"><rect width="150" height="36" rx="18" fill="#3b4423" stroke="#8ea675"/><text x="75" y="24" text-anchor="middle" fill="#f1e7d0" font-size="16">AI Automation</text></g>
+    <g class="pill" transform="translate(164,0)" style="animation-delay:.3s"><rect width="160" height="36" rx="18" fill="#3b4423" stroke="#8ea675"/><text x="80" y="24" text-anchor="middle" fill="#f1e7d0" font-size="16">Mobile Apps</text></g>
+    <g class="pill" transform="translate(338,0)" style="animation-delay:.6s"><rect width="150" height="36" rx="18" fill="#3b4423" stroke="#8ea675"/><text x="75" y="24" text-anchor="middle" fill="#f1e7d0" font-size="16">Web Dev</text></g>
+    <g class="pill" transform="translate(502,0)" style="animation-delay:.9s"><rect width="170" height="36" rx="18" fill="#3b4423" stroke="#8ea675"/><text x="85" y="24" text-anchor="middle" fill="#f1e7d0" font-size="16">Prompt Eng</text></g>
+  </g>
+
+  <!-- ================================================================
+       ABOUT ME LINES
+  ================================================================= -->
+  <g transform="translate(72, 620)">
+    <text x="0" y="0" fill="#b7c99a" font-size="18" class="about-line" style="animation-delay:2.2s">
+      <tspan fill="#e0c96a">//</tspan> about me
+    </text>
+    <text x="0" y="28" fill="#e6e0c8" font-size="16" class="about-line" style="animation-delay:2.8s">
+      Building agents that work for people.
+    </text>
+    <text x="0" y="52" fill="#e6e0c8" font-size="16" class="about-line" style="animation-delay:3.3s">
+      From design to AI — making it all talk to each other.
+    </text>
+  </g>
+
+  <!-- ================================================================
+       ANIMATED STATS BAR
+  ================================================================= -->
+  <g transform="translate(640, 560)">
+    <rect x="0" y="0" width="560" height="150" rx="14" fill="#23281a" stroke="#57653c" stroke-width="1.5"/>
+    <text x="24" y="34" fill="#b7c99a" font-size="16" font-weight="700">QUICK STATS</text>
+    <g transform="translate(24, 56)">
+      <text x="0" y="0" fill="#f1e7d0" font-size="14">Repositories</text>
+      <text x="120" y="0" fill="#c9d9ae" font-size="14">12+</text>
+      <rect x="0" y="10" width="420" height="8" rx="4" fill="#2e341c"/>
+      <rect x="0" y="10" width="315" height="8" rx="4" fill="#8ea675" class="bar-fill"/>
+    </g>
+    <g transform="translate(24, 100)">
+      <text x="0" y="0" fill="#f1e7d0" font-size="14">Commits</text>
+      <text x="120" y="0" fill="#c9d9ae" font-size="14">900+</text>
+      <rect x="0" y="10" width="420" height="8" rx="4" fill="#2e341c"/>
+      <rect x="0" y="10" width="380" height="8" rx="4" fill="#b7c99a" class="bar-fill"/>
+    </g>
+  </g>
+
+  <!-- ================================================================
+       CODE EDITOR CARD — types buildDreams()
+  ================================================================= -->
+  <g>
+    <rect x="640" y="180" width="560" height="250" rx="14" fill="#1e2413" stroke="#57653c" stroke-width="2"/>
+    <circle cx="668" cy="206" r="7" fill="#e07a6a"/><circle cx="692" cy="206" r="7" fill="#e0c06a"/><circle cx="716" cy="206" r="7" fill="#7ac07a"/>
+    <text x="742" y="211" fill="#8ea675" font-size="13">buildDreams.jsx</text>
+    <g transform="translate(28, 36)">
+      <text x="0" y="0" fill="#7ac07a" font-size="15" class="code-line"><tspan fill="#e07a6a">const</tspan> <tspan fill="#e0c06a">buildDreams</tspan> = <tspan fill="#7ac07a">()</tspan> <tspan fill="#e0c06a">=&gt;</tspan> {"{"}</text>
+      <text x="20" y="28" fill="#c9d9ae" font-size="15" class="code-line" style="animation-delay:.5s">  <tspan fill="#e07a6a">const</tspan> dreams = <tspan fill="#7ac07a">[</tspan></text>
+      <text x="40" y="56" fill="#f1e7d0" font-size="15" class="code-line" style="animation-delay:1s">    <tspan fill="#e0c96a">"AI that works for people"</tspan>,</text>
+      <text x="40" y="84" fill="#f1e7d0" font-size="15" class="code-line" style="animation-delay:1.5s">    <tspan fill="#e0c96a">"Voice that acts"</tspan>,</text>
+      <text x="40" y="112" fill="#f1e7d0" font-size="15" class="code-line" style="animation-delay:2s">    <tspan fill="#e0c96a">"Zero budget, infinite ambition"</tspan></text>
+      <text x="20" y="140" fill="#c9d9ae" font-size="15" class="code-line" style="animation-delay:2.5s">  <tspan fill="#7ac07a">]</tspan>;</text>
+      <text x="0" y="168" fill="#7ac07a" font-size="15" class="code-line" style="animation-delay:3s">  <tspan fill="#e07a6a">return</tspan> dreams.<tspan fill="#e0c06a">map</tspan>(<tspan fill="#f1e7d0">d</tspan> <tspan fill="#e0c06a">=&gt;</tspan> <tspan fill="#f1e7d0">build</tspan>(d));</text>
+      <text x="0" y="196" fill="#7ac07a" font-size="15" class="code-line" style="animation-delay:3.5s">{"}"}</text>
+      <text x="0" y="196" fill="#b7c99a" font-size="15" class="code-caret" style="animation-delay:4s">▍</text>
+    </g>
+  </g>
+
+  <!-- ================================================================
+       NEON SIGN
+  ================================================================= -->
+  <g class="neon" transform="translate(640, 462)">
+    <text x="0" y="40" font-size="30" font-weight="700" fill="#b7c99a" text-anchor="middle" filter="url(#softGlow)"
+      style="font-family:'Caveat', cursive; letter-spacing:2px">
+      KEEP CODING KEEP GROWING
+    </text>
+  </g>
+
+  <!-- ================================================================
+       FLOATING HEARTS / SPARKLES / PARTICLES
+  ================================================================= -->
+  <!-- Hearts -->
+  <g class="float-heart" style="animation-delay:0s"><text x="1150" y="620" fill="#e0c96a" font-size="22">♥</text></g>
+  <g class="float-heart" style="animation-delay:2s"><text x="1200" y="680" fill="#e0c96a" font-size="16">♥</text></g>
+  <g class="float-heart" style="animation-delay:4s"><text x="1225" y="560" fill="#e0c96a" font-size="28">♥</text></g>
+
+  <!-- Sparkles -->
+  <g class="sparkle" style="animation-delay:0s"><text x="180" y="200" fill="#f1e7d0" font-size="20">✦</text></g>
+  <g class="sparkle" style="animation-delay:.8s"><text x="420" y="160" fill="#f1e7d0" font-size="14">✦</text></g>
+  <g class="sparkle" style="animation-delay:1.6s"><text x="1150" y="110" fill="#f1e7d0" font-size="18">✦</text></g>
+  <g class="sparkle" style="animation-delay:2.4s"><text x="80" y="700" fill="#f1e7d0" font-size="16">✦</text></g>
+
+  <!-- Rising particles -->
+  <g class="rise" style="animation-delay:0s"><circle cx="160" cy="700" r="3" fill="#b7c99a"/></g>
+  <g class="rise" style="animation-delay:1.5s"><circle cx="300" cy="700" r="2" fill="#c9d9ae"/></g>
+  <g class="rise" style="animation-delay:3s"><circle cx="500" cy="700" r="2.5" fill="#b7c99a"/></g>
+  <g class="rise" style="animation-delay:4.5s"><circle cx="680" cy="700" r="3" fill="#c9d9ae"/></g>
+  <g class="rise" style="animation-delay:2s"><circle cx="880" cy="700" r="2" fill="#b7c99a"/></g>
+  <g class="rise" style="animation-delay:5.5s"><circle cx="1240" cy="700" r="2.5" fill="#c9d9ae"/></g>
+
+  <!-- Foreground scanner (on top of everything, clipped to rounded corners) -->
+  <g class="scanner-beam" clip-path="url(#bannerClip)">
+    <rect x="0" y="0" width="1280" height="5" fill="#d9e4c5" opacity="0.9"/>
+    <rect x="0" y="5" width="1280" height="46" fill="url(#scannerGrad)" opacity="0.35"/>
+  </g>
+</svg>

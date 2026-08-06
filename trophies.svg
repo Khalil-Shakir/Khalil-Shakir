@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="180" viewBox="0 0 820 180" role="img" aria-label="GitHub trophies for Khalil Shakir">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe9a0"/><stop offset="100%" stop-color="#d4af37"/>
+    </linearGradient>
+    <linearGradient id="silver" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f2f2f2"/><stop offset="100%" stop-color="#a8a8a8"/>
+    </linearGradient>
+    <linearGradient id="bronze" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e3b080"/><stop offset="100%" stop-color="#a06a3a"/>
+    </linearGradient>
+    <linearGradient id="shineT" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0)"/>
+      <stop offset="50%" stop-color="rgba(255,255,255,0.25)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+    <filter id="glowGold" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="shadowT" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+    <style>
+      text { font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace; }
+      .cell { opacity: 0; animation: pop .5s cubic-bezier(.17,.89,.32,1.28) forwards; }
+      @keyframes pop { 0% { opacity: 0; transform: scale(.3); } 100% { opacity: 1; transform: scale(1); } }
+      .shine { transform: translateX(-120px); animation: shine 4s ease-in-out 1.5s infinite; }
+      .fill { transform-origin: 0 50%; animation: grow 1.5s ease-out forwards; }
+      @keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+      @keyframes shine { 0%,30% { transform: translateX(-120px); } 70%,100% { transform: translateX(120px); } }
+    </style>
+  </defs>
+
+  <g filter="url(#shadowT)">
+    <!-- Trophy 1: Gold — Repositories -->
+    <g transform="translate(10, 10)">
+      <rect x="0" y="0" width="190" height="160" rx="14" fill="#23281a" stroke="#57653c" stroke-width="2" class="cell"/>
+      <g class="cell" style="animation-delay:.2s">
+        <path d="M 95 20 L 110 20 L 110 30 L 105 32 L 105 44 Q 105 58 95 62 Q 85 58 85 44 L 85 32 L 80 30 L 80 20 Z" fill="url(#gold)" filter="url(#glowGold)"/>
+        <text x="95" y="88" text-anchor="middle" fill="#f1e7d0" font-size="16" font-weight="700">Repositories</text>
+        <text x="95" y="114" text-anchor="middle" fill="#b7c99a" font-size="20" font-weight="700">12</text>
+        <rect x="10" y="130" width="170" height="8" rx="4" fill="#2e341c"/>
+        <rect x="10" y="130" width="150" height="8" rx="4" fill="#d4af37" class="fill"/>
+      </g>
+      <rect x="0" y="0" width="190" height="160" rx="14" fill="url(#shineT)" class="shine"/>
+    </g>
+
+    <!-- Trophy 2: Silver — Stars -->
+    <g transform="translate(210, 10)">
+      <rect x="0" y="0" width="190" height="160" rx="14" fill="#23281a" stroke="#57653c" stroke-width="2" class="cell" style="animation-delay:.2s"/>
+      <g class="cell" style="animation-delay:.4s">
+        <path d="M 95 20 L 110 20 L 110 30 L 105 32 L 105 44 Q 105 58 95 62 Q 85 58 85 44 L 85 32 L 80 30 L 80 20 Z" fill="url(#silver)"/>
+        <text x="95" y="88" text-anchor="middle" fill="#f1e7d0" font-size="16" font-weight="700">Stars</text>
+        <text x="95" y="114" text-anchor="middle" fill="#b7c99a" font-size="20" font-weight="700">24</text>
+        <rect x="10" y="130" width="170" height="8" rx="4" fill="#2e341c"/>
+        <rect x="10" y="130" width="150" height="8" rx="4" fill="#c0c0c0" class="fill"/>
+      </g>
+      <rect x="0" y="0" width="190" height="160" rx="14" fill="url(#shineT)" class="shine" style="animation-delay:1.8s"/>
+    </g>
+
+    <!-- Trophy 3: Bronze — Commits -->
+    <g transform="translate(410, 10)">
+      <rect x="0" y="0" width="190" height="160" rx="14" fill="#23281a" stroke="#57653c" stroke-width="2" class="cell" style="animation-delay:.4s"/>
+      <g class="cell" style="animation-delay:.6s">
+        <path d="M 95 20 L 110 20 L 110 30 L 105 32 L 105 44 Q 105 58 95 62 Q 85 58 85 44 L 85 32 L 80 30 L 80 20 Z" fill="url(#bronze)"/>
+        <text x="95" y="88" text-anchor="middle" fill="#f1e7d0" font-size="16" font-weight="700">Commits</text>
+        <text x="95" y="114" text-anchor="middle" fill="#b7c99a" font-size="20" font-weight="700">900</text>
+        <rect x="10" y="130" width="170" height="8" rx="4" fill="#2e341c"/>
+        <rect x="10" y="130" width="150" height="8" rx="4" fill="#c08a5a" class="fill"/>
+      </g>
+      <rect x="0" y="0" width="190" height="160" rx="14" fill="url(#shineT)" class="shine" style="animation-delay:2.1s"/>
+    </g>
+
+    <!-- Trophy 4: Gold — Followers -->
+    <g transform="translate(610, 10)">
+      <rect x="0" y="0" width="190" height="160" rx="14" fill="#23281a" stroke="#57653c" stroke-width="2" class="cell" style="animation-delay:.6s"/>
+      <g class="cell" style="animation-delay:.8s">
+        <path d="M 95 20 L 110 20 L 110 30 L 105 32 L 105 44 Q 105 58 95 62 Q 85 58 85 44 L 85 32 L 80 30 L 80 20 Z" fill="url(#gold)" filter="url(#glowGold)"/>
+        <text x="95" y="88" text-anchor="middle" fill="#f1e7d0" font-size="16" font-weight="700">Followers</text>
+        <text x="95" y="114" text-anchor="middle" fill="#b7c99a" font-size="20" font-weight="700">15</text>
+        <rect x="10" y="130" width="170" height="8" rx="4" fill="#2e341c"/>
+        <rect x="10" y="130" width="150" height="8" rx="4" fill="#d4af37" class="fill"/>
+      </g>
+      <rect x="0" y="0" width="190" height="160" rx="14" fill="url(#shineT)" class="shine" style="animation-delay:2.4s"/>
+    </g>
+  </g>
+</svg>

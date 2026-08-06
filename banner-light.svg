@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1280" height="740" viewBox="0 0 1280 740" role="img" aria-label="Khalil Shakir — AI Automation Engineer banner (light)">
+  <defs>
+    <linearGradient id="bgGradL" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f7f5ee"/>
+      <stop offset="50%" stop-color="#efede2"/>
+      <stop offset="100%" stop-color="#e6e3d4"/>
+    </linearGradient>
+    <linearGradient id="nameGradL" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4a5630"/>
+      <stop offset="50%" stop-color="#6f8550"/>
+      <stop offset="100%" stop-color="#3b4423"/>
+    </linearGradient>
+    <linearGradient id="scannerGradL" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="rgba(107,125,74,0)" />
+      <stop offset="50%" stop-color="rgba(107,125,74,0.85)" />
+      <stop offset="100%" stop-color="rgba(107,125,74,0)" />
+    </linearGradient>
+    <radialGradient id="orbL1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(154,170,110,0.30)"/>
+      <stop offset="100%" stop-color="rgba(154,170,110,0)"/>
+    </radialGradient>
+    <radialGradient id="orbL2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(200,180,120,0.22)"/>
+      <stop offset="100%" stop-color="rgba(200,180,120,0)"/>
+    </radialGradient>
+    <radialGradient id="avatarGlowL" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(107,125,74,0.5)"/>
+      <stop offset="70%" stop-color="rgba(107,125,74,0.10)"/>
+      <stop offset="100%" stop-color="rgba(107,125,74,0)"/>
+    </radialGradient>
+    <clipPath id="bannerClipL">
+      <rect x="0" y="0" width="1280" height="740" rx="28" ry="28"/>
+    </clipPath>
+    <clipPath id="charClipL">
+      <rect x="0" y="0" width="1280" height="740" rx="28" ry="28"/>
+    </clipPath>
+    <filter id="softGlowL" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&amp;family=Caveat:wght@700&amp;display=swap');
+      text { font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace; }
+      .script { font-family: 'Caveat', 'Brush Script MT', cursive; }
+      .cursor { animation: blink 1s steps(1) infinite; }
+      @keyframes blink { 50% { opacity: 0; } }
+      .name-letter { opacity: 0; animation: pop .5s cubic-bezier(.17,.89,.32,1.28) forwards; }
+      @keyframes pop { 0% { opacity: 0; transform: translateY(22px) scale(.4); } 60% { opacity: 1; transform: translateY(-4px) scale(1.08); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
+      .role-cycle { animation: roleCycle 12s infinite; }
+      @keyframes roleCycle { 0% { opacity: 0; transform: translateY(12px); } 4% { opacity: 1; transform: translateY(0); } 28% { opacity: 1; } 32% { opacity: 0; transform: translateY(-12px); } 100% { opacity: 0; } }
+      .quote-caret { animation: caretBlink 0.8s steps(1) infinite; }
+      @keyframes caretBlink { 50% { opacity: 0; } }
+      .pill { opacity: 0; transform: translateY(10px) scale(.9); animation: pillIn .5s ease forwards; }
+      @keyframes pillIn { to { opacity: 1; transform: translateY(0) scale(1); } }
+      .pill:hover { filter: drop-shadow(0 0 8px rgba(107,125,74,.8)); }
+      .pill:hover rect { fill: #d4d9bf; }
+      .about-line { opacity: 0; animation: fadeUp .6s ease forwards; }
+      @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+      .bar-fill { transform-origin: 0 50%; animation: growBar 1.6s ease-out forwards; }
+      @keyframes growBar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+      .code-line { opacity: 0; animation: codeIn .35s ease forwards; }
+      @keyframes codeIn { from { opacity: 0; transform: translateX(-8px); } to { opacity: 1; transform: translateX(0); } }
+      .code-caret { animation: caretBlink 0.7s steps(1) infinite; }
+      .neon { opacity: 0; animation: flicker 8s ease forwards; }
+      @keyframes flicker { 0% { opacity: 0; } 78% { opacity: 0; } 80% { opacity: 1; } 82% { opacity: .4; } 84% { opacity: 1; } 86% { opacity: .6; } 88% { opacity: 1; } 100% { opacity: 1; } }
+      .float-heart { animation: floatUp 6s ease-in infinite; opacity: 0; }
+      @keyframes floatUp { 0% { opacity: 0; transform: translateY(0) scale(.6); } 20% { opacity: .8; } 100% { opacity: 0; transform: translateY(-320px) scale(1.1); } }
+      .sparkle { animation: twinkle 2.4s ease-in-out infinite; }
+      @keyframes twinkle { 0%,100% { opacity: 0; } 50% { opacity: 1; } }
+      .rise { animation: rise 7s linear infinite; opacity: 0; }
+      @keyframes rise { 0% { opacity: 0; transform: translateY(0); } 15% { opacity: .6; } 100% { opacity: 0; transform: translateY(-500px); } }
+      .orb { animation: pulse 6s ease-in-out infinite; }
+      @keyframes pulse { 0%,100% { transform: scale(1); opacity: .6; } 50% { transform: scale(1.3); opacity: 1; } }
+      .orb2 { animation: pulse 8s ease-in-out infinite; animation-delay: 2s; }
+      .holo-reveal { clip-path: inset(0 0 100% 0); animation: holoReveal 2.4s cubic-bezier(.2,.7,.3,1) forwards; }
+      @keyframes holoReveal { 0% { clip-path: inset(0 0 100% 0); } 100% { clip-path: inset(0 0 0 0); } }
+      .holo-line { opacity: 0; animation: holoLine 2.4s linear forwards; }
+      @keyframes holoLine { 0% { opacity: 0; } 30% { opacity: 1; } 70% { opacity: 1; } 100% { opacity: 0; } }
+      .scanner { animation: scanLoop 3.5s linear infinite; animation-delay: 2.4s; opacity: 0; }
+      @keyframes scanLoop { 0% { transform: translateY(-80px); opacity: 0; } 6% { opacity: 1; } 94% { opacity: 1; } 100% { transform: translateY(740px); opacity: 0; } }
+      .scanner-beam { opacity: 0; animation: scanLoop 3.5s linear infinite; animation-delay: 2.4s; }
+    </style>
+  </defs>
+
+  <rect width="1280" height="740" fill="url(#bgGradL)"/>
+  <g class="orb"><circle cx="180" cy="620" r="220" fill="url(#orbL1)"/></g>
+  <g class="orb2"><circle cx="1120" cy="140" r="260" fill="url(#orbL2)"/></g>
+
+  <!-- Character with hologram reveal -->
+  <g clip-path="url(#charClipL)">
+    <g class="holo-reveal">
+      <circle cx="1040" cy="330" r="150" fill="url(#avatarGlowL)"/>
+      <circle cx="1040" cy="330" r="96" fill="none" stroke="#6b7d4a" stroke-width="2" opacity="0.5">
+        <animate attributeName="r" values="96;104;96" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.5;0.2;0.5" dur="4s" repeatCount="indefinite"/>
+      </circle>
+      <!-- IMAGE_B64 -->
+      <image x="940" y="230" width="200" height="200" preserveAspectRatio="xMidYMid slice" xlink:href="data:image/png;base64,IMAGE_B64"/>
+    </g>
+    <rect x="0" y="0" width="1280" height="6" fill="url(#scannerGradL)" class="holo-line">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 740" dur="2.4s" fill="freeze" calcMode="spline" keySplines="0.2 0.7 0.3 1" keyTimes="0;1"/>
+    </rect>
+    <g class="scanner" clip-path="url(#bannerClipL)">
+      <rect x="0" y="0" width="1280" height="5" fill="#6b7d4a" opacity="0.8"/>
+      <rect x="0" y="5" width="1280" height="42" fill="url(#scannerGradL)" opacity="0.4"/>
+    </g>
+  </g>
+
+  <!-- Terminal -->
+  <g>
+    <rect x="50" y="42" width="520" height="120" rx="14" fill="#ffffff" stroke="#c9cdb4" stroke-width="2"/>
+    <circle cx="78" cy="66" r="7" fill="#e07a6a"/><circle cx="102" cy="66" r="7" fill="#e0c06a"/><circle cx="126" cy="66" r="7" fill="#7ac07a"/>
+    <text x="150" y="71" fill="#6b7d4a" font-size="14">zsh — user@dev</text>
+    <text x="72" y="112" fill="#4a5630" font-size="22" class="type-cmd">
+      <tspan>user@dev :~ $</tspan> <tspan fill="#3b4423">cat README.md</tspan>
+    </text>
+    <text x="72" y="144" fill="#4a5630" font-size="22" class="cursor" opacity="0">
+      <animate attributeName="opacity" values="0;1" dur="0.6s" begin="2.6s" fill="freeze"/>
+    </text>
+  </g>
+
+  <!-- Name -->
+  <g transform="translate(70, 250)">
+    <text x="0" y="0" class="script" font-size="86" fill="url(#nameGradL)" font-weight="700">
+      <tspan class="name-letter">K</tspan><tspan class="name-letter" style="animation-delay:.08s">h</tspan><tspan class="name-letter" style="animation-delay:.16s">a</tspan><tspan class="name-letter" style="animation-delay:.24s">l</tspan><tspan class="name-letter" style="animation-delay:.32s">i</tspan><tspan class="name-letter" style="animation-delay:.40s">l</tspan>
+      <tspan x="0" y="95" class="name-letter" style="animation-delay:.48s">S</tspan><tspan class="name-letter" style="animation-delay:.56s">h</tspan><tspan class="name-letter" style="animation-delay:.64s">a</tspan><tspan class="name-letter" style="animation-delay:.72s">k</tspan><tspan class="name-letter" style="animation-delay:.80s">i</tspan><tspan class="name-letter" style="animation-delay:.88s">r</tspan>
+    </text>
+  </g>
+
+  <!-- Cycling roles -->
+  <g transform="translate(72, 405)">
+    <text x="0" y="0" font-size="34" fill="#4a5630" class="role-cycle"><tspan x="0" y="0">AI Automation Engineer</tspan></text>
+    <text x="0" y="0" font-size="34" fill="#4a5630" class="role-cycle" style="animation-delay:4s"><tspan x="0" y="0">Python Developer</tspan></text>
+    <text x="0" y="0" font-size="34" fill="#4a5630" class="role-cycle" style="animation-delay:8s"><tspan x="0" y="0">Mobile App Developer</tspan></text>
+  </g>
+
+  <!-- Quote -->
+  <g>
+    <rect x="70" y="452" width="640" height="56" rx="10" fill="#ffffff" stroke="#c9cdb4" stroke-width="1.5" opacity="0.95"/>
+    <text x="92" y="486" fill="#a07a30" font-size="20" class="script">
+      "Letting the inner creativity shine"
+      <animate attributeName="opacity" values="0;1" dur="0.8s" begin="2.2s" fill="freeze"/>
+    </text>
+  </g>
+
+  <!-- Tech pills -->
+  <g transform="translate(70, 540)">
+    <g class="pill"><rect width="150" height="36" rx="18" fill="#e4e3d3" stroke="#6b7d4a"/><text x="75" y="24" text-anchor="middle" fill="#3b4423" font-size="16">AI Automation</text></g>
+    <g class="pill" transform="translate(164,0)" style="animation-delay:.3s"><rect width="160" height="36" rx="18" fill="#e4e3d3" stroke="#6b7d4a"/><text x="80" y="24" text-anchor="middle" fill="#3b4423" font-size="16">Mobile Apps</text></g>
+    <g class="pill" transform="translate(338,0)" style="animation-delay:.6s"><rect width="150" height="36" rx="18" fill="#e4e3d3" stroke="#6b7d4a"/><text x="75" y="24" text-anchor="middle" fill="#3b4423" font-size="16">Web Dev</text></g>
+    <g class="pill" transform="translate(502,0)" style="animation-delay:.9s"><rect width="170" height="36" rx="18" fill="#e4e3d3" stroke="#6b7d4a"/><text x="85" y="24" text-anchor="middle" fill="#3b4423" font-size="16">Prompt Eng</text></g>
+  </g>
+
+  <!-- About me -->
+  <g transform="translate(72, 620)">
+    <text x="0" y="0" fill="#6b7d4a" font-size="18" class="about-line" style="animation-delay:2.2s"><tspan fill="#a07a30">//</tspan> about me</text>
+    <text x="0" y="28" fill="#3b4423" font-size="16" class="about-line" style="animation-delay:2.8s">Building agents that work for people.</text>
+    <text x="0" y="52" fill="#3b4423" font-size="16" class="about-line" style="animation-delay:3.3s">From design to AI — making it all talk to each other.</text>
+  </g>
+
+  <!-- Stats bar -->
+  <g transform="translate(640, 560)">
+    <rect x="0" y="0" width="560" height="150" rx="14" fill="#ffffff" stroke="#c9cdb4" stroke-width="1.5"/>
+    <text x="24" y="34" fill="#4a5630" font-size="16" font-weight="700">QUICK STATS</text>
+    <g transform="translate(24, 56)">
+      <text x="0" y="0" fill="#3b4423" font-size="14">Repositories</text>
+      <text x="120" y="0" fill="#4a5630" font-size="14">12+</text>
+      <rect x="0" y="10" width="420" height="8" rx="4" fill="#e4e3d3"/>
+      <rect x="0" y="10" width="315" height="8" rx="4" fill="#6b7d4a" class="bar-fill"/>
+    </g>
+    <g transform="translate(24, 100)">
+      <text x="0" y="0" fill="#3b4423" font-size="14">Commits</text>
+      <text x="120" y="0" fill="#4a5630" font-size="14">900+</text>
+      <rect x="0" y="10" width="420" height="8" rx="4" fill="#e4e3d3"/>
+      <rect x="0" y="10" width="380" height="8" rx="4" fill="#9caF88" class="bar-fill"/>
+    </g>
+  </g>
+
+  <!-- Code card -->
+  <g>
+    <rect x="640" y="180" width="560" height="250" rx="14" fill="#ffffff" stroke="#c9cdb4" stroke-width="2"/>
+    <circle cx="668" cy="206" r="7" fill="#e07a6a"/><circle cx="692" cy="206" r="7" fill="#e0c06a"/><circle cx="716" cy="206" r="7" fill="#7ac07a"/>
+    <text x="742" y="211" fill="#6b7d4a" font-size="13">buildDreams.jsx</text>
+    <g transform="translate(28, 36)">
+      <text x="0" y="0" fill="#2f6b2f" font-size="15" class="code-line"><tspan fill="#a04030">const</tspan> <tspan fill="#a07a30">buildDreams</tspan> = <tspan fill="#2f6b2f">()</tspan> <tspan fill="#a07a30">=&gt;</tspan> {"{"}</text>
+      <text x="20" y="28" fill="#4a5630" font-size="15" class="code-line" style="animation-delay:.5s">  <tspan fill="#a04030">const</tspan> dreams = <tspan fill="#2f6b2f">[</tspan></text>
+      <text x="40" y="56" fill="#3b4423" font-size="15" class="code-line" style="animation-delay:1s">    <tspan fill="#a07a30">"AI that works for people"</tspan>,</text>
+      <text x="40" y="84" fill="#3b4423" font-size="15" class="code-line" style="animation-delay:1.5s">    <tspan fill="#a07a30">"Voice that acts"</tspan>,</text>
+      <text x="40" y="112" fill="#3b4423" font-size="15" class="code-line" style="animation-delay:2s">    <tspan fill="#a07a30">"Zero budget, infinite ambition"</tspan></text>
+      <text x="20" y="140" fill="#4a5630" font-size="15" class="code-line" style="animation-delay:2.5s">  <tspan fill="#2f6b2f">]</tspan>;</text>
+      <text x="0" y="168" fill="#2f6b2f" font-size="15" class="code-line" style="animation-delay:3s">  <tspan fill="#a04030">return</tspan> dreams.<tspan fill="#a07a30">map</tspan>(<tspan fill="#3b4423">d</tspan> <tspan fill="#a07a30">=&gt;</tspan> <tspan fill="#3b4423">build</tspan>(d));</text>
+      <text x="0" y="196" fill="#2f6b2f" font-size="15" class="code-line" style="animation-delay:3.5s">{"}"}</text>
+      <text x="0" y="196" fill="#4a5630" font-size="15" class="code-caret" style="animation-delay:4s">▍</text>
+    </g>
+  </g>
+
+  <!-- Neon -->
+  <g class="neon" transform="translate(640, 462)">
+    <text x="0" y="40" font-size="30" font-weight="700" fill="#4a5630" text-anchor="middle" filter="url(#softGlowL)" style="font-family:'Caveat', cursive; letter-spacing:2px">KEEP CODING KEEP GROWING</text>
+  </g>
+
+  <!-- Floating -->
+  <g class="float-heart" style="animation-delay:0s"><text x="1150" y="620" fill="#a07a30" font-size="22">♥</text></g>
+  <g class="float-heart" style="animation-delay:2s"><text x="1200" y="680" fill="#a07a30" font-size="16">♥</text></g>
+  <g class="float-heart" style="animation-delay:4s"><text x="1225" y="560" fill="#a07a30" font-size="28">♥</text></g>
+  <g class="sparkle" style="animation-delay:0s"><text x="180" y="200" fill="#8a7a40" font-size="20">✦</text></g>
+  <g class="sparkle" style="animation-delay:.8s"><text x="420" y="160" fill="#8a7a40" font-size="14">✦</text></g>
+  <g class="sparkle" style="animation-delay:1.6s"><text x="1150" y="110" fill="#8a7a40" font-size="18">✦</text></g>
+  <g class="sparkle" style="animation-delay:2.4s"><text x="80" y="700" fill="#8a7a40" font-size="16">✦</text></g>
+  <g class="rise" style="animation-delay:0s"><circle cx="160" cy="700" r="3" fill="#6b7d4a"/></g>
+  <g class="rise" style="animation-delay:1.5s"><circle cx="300" cy="700" r="2" fill="#4a5630"/></g>
+  <g class="rise" style="animation-delay:3s"><circle cx="500" cy="700" r="2.5" fill="#6b7d4a"/></g>
+  <g class="rise" style="animation-delay:4.5s"><circle cx="680" cy="700" r="3" fill="#4a5630"/></g>
+  <g class="rise" style="animation-delay:2s"><circle cx="880" cy="700" r="2" fill="#6b7d4a"/></g>
+  <g class="rise" style="animation-delay:5.5s"><circle cx="1240" cy="700" r="2.5" fill="#4a5630"/></g>
+
+  <g class="scanner-beam" clip-path="url(#bannerClipL)">
+    <rect x="0" y="0" width="1280" height="5" fill="#4a5630" opacity="0.85"/>
+    <rect x="0" y="5" width="1280" height="46" fill="url(#scannerGradL)" opacity="0.35"/>
+  </g>
+</svg>
