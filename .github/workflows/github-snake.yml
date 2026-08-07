@@ -27,12 +27,11 @@ jobs:
           fetch-depth: 0
 
       - name: Generate Snake
-        uses: Platane/snk@v3
+        uses: Platane/snk/svg-only@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
             dist/github-snake-dark.svg?color_snake=%23C4D7B2&color_dots=%230E130D,%231E2B1A,%233B5033,%23607D53,%2387A97B
-            dist/github-snake.gif?color_snake=%23C4D7B2&color_dots=%230E130D,%231E2B1A,%233B5033,%23607D53,%2387A97B
             dist/github-snake-default.svg
 
       - name: Push to output branch
