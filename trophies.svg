@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 200" width="660" height="200">
+  <defs>
+    <linearGradient id="t-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F150E"/>
+      <stop offset="100%" stop-color="#080B07"/>
+    </linearGradient>
+    <linearGradient id="t-shine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF" stop-opacity="0"/>
+      <stop offset="38%" stop-color="#FFF" stop-opacity="0"/>
+      <stop offset="48%" stop-color="#C4D7B2" stop-opacity="0.18"/>
+      <stop offset="52%" stop-color="#FFF" stop-opacity="0.28"/>
+      <stop offset="62%" stop-color="#A3B899" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#FFF" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="t-glow-gold" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="t-glow-sage" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="2.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="t-clip"><rect width="660" height="200" rx="12" ry="12"/></clipPath>
+  </defs>
+
+  <style>
+    .t-cell {
+      opacity:0;
+      animation: t-pop 0.55s cubic-bezier(0.175,0.885,0.32,1.275) forwards;
+    }
+    @keyframes t-pop {
+      from { opacity:0; transform:scale(0.6) translateY(12px); }
+      to   { opacity:1; transform:scale(1) translateY(0); }
+    }
+    .t-blink { animation: t-bl 2s step-end infinite; }
+    @keyframes t-bl { 50%{ opacity:0.12; } }
+    .t-gold-pulse { animation: t-gp 2.5s ease-in-out infinite alternate; }
+    @keyframes t-gp { 0%{opacity:0.7;} 100%{opacity:1;} }
+  </style>
+
+  <g clip-path="url(#t-clip)">
+    <!-- Background -->
+    <rect width="660" height="200" fill="url(#t-bg)"/>
+
+    <!-- Grid -->
+    <g stroke="rgba(163,184,153,0.02)" stroke-width="0.5">
+      <line x1="132" y1="0" x2="132" y2="200"/>
+      <line x1="264" y1="0" x2="264" y2="200"/>
+      <line x1="396" y1="0" x2="396" y2="200"/>
+      <line x1="528" y1="0" x2="528" y2="200"/>
+      <line x1="0" y1="50" x2="660" y2="50"/>
+      <line x1="0" y1="100" x2="660" y2="100"/>
+      <line x1="0" y1="150" x2="660" y2="150"/>
+    </g>
+
+    <!-- Title -->
+    <text x="30" y="32" font-family="'Outfit','Inter',sans-serif" font-size="13"
+          font-weight="900" fill="#87A97B" letter-spacing="1.5">ACHIEVEMENT TROPHIES</text>
+
+    <!-- ═══ TROPHY 1: STAR GAZER — SSS ═══ -->
+    <g class="t-cell" style="animation-delay:0.25s">
+      <rect x="22" y="48" width="140" height="120" rx="10" ry="10"
+            fill="rgba(163,184,153,0.04)" stroke="rgba(196,215,178,0.18)" stroke-width="1"/>
+
+      <!-- Trophy Illustration -->
+      <g transform="translate(92,62)" class="t-gold-pulse">
+        <!-- Handles -->
+        <path d="M-18,8 C-24,8 -24,20 -18,20" stroke="#C4D7B2" stroke-width="2" fill="none"/>
+        <path d="M18,8 C24,8 24,20 18,20" stroke="#C4D7B2" stroke-width="2" fill="none"/>
+        <!-- Cup -->
+        <path d="M-14,0 L14,0 L10,24 L6,30 L6,36 L12,36 L12,40 L-12,40 L-12,36 L-6,36 L-6,30 L-10,24 Z"
+              fill="#C4D7B2" filter="url(#t-glow-gold)"/>
+        <!-- Star Emblem -->
+        <path d="M0,8 L2.5,14 L9,14.5 L4,18.5 L5.5,25 L0,21.5 L-5.5,25 L-4,18.5 L-9,14.5 L-2.5,14 Z"
+              fill="#DFF2D8" opacity="0.9"/>
+      </g>
+
+      <text x="92" y="140" font-family="'Outfit',sans-serif" font-size="11" font-weight="700"
+            fill="#DFF2D8" text-anchor="middle">Star Gazer</text>
+      <text x="92" y="156" font-family="'Outfit',sans-serif" font-size="9" font-weight="900"
+            fill="#C4D7B2" text-anchor="middle" letter-spacing="2" filter="url(#t-glow-sage)">SSS</text>
+    </g>
+
+    <!-- ═══ TROPHY 2: COMMIT LORD — SS ═══ -->
+    <g class="t-cell" style="animation-delay:0.5s">
+      <rect x="182" y="48" width="140" height="120" rx="10" ry="10"
+            fill="rgba(163,184,153,0.04)" stroke="rgba(135,169,123,0.15)" stroke-width="1"/>
+
+      <g transform="translate(252,62)">
+        <path d="M-18,8 C-24,8 -24,20 -18,20" stroke="#87A97B" stroke-width="2" fill="none"/>
+        <path d="M18,8 C24,8 24,20 18,20" stroke="#87A97B" stroke-width="2" fill="none"/>
+        <path d="M-14,0 L14,0 L10,24 L6,30 L6,36 L12,36 L12,40 L-12,40 L-12,36 L-6,36 L-6,30 L-10,24 Z"
+              fill="#87A97B"/>
+        <!-- Lightning Bolt Emblem -->
+        <path d="M2,6 L-4,16 L0,16 L-3,26 L6,14 L2,14 Z" fill="#DFF2D8" opacity="0.9"/>
+      </g>
+
+      <text x="252" y="140" font-family="'Outfit',sans-serif" font-size="11" font-weight="700"
+            fill="#DFF2D8" text-anchor="middle">Commit Lord</text>
+      <text x="252" y="156" font-family="'Outfit',sans-serif" font-size="9" font-weight="900"
+            fill="#87A97B" text-anchor="middle" letter-spacing="2">SS</text>
+    </g>
+
+    <!-- ═══ TROPHY 3: PULL SHARK — S ═══ -->
+    <g class="t-cell" style="animation-delay:0.75s">
+      <rect x="342" y="48" width="140" height="120" rx="10" ry="10"
+            fill="rgba(163,184,153,0.04)" stroke="rgba(96,125,83,0.15)" stroke-width="1"/>
+
+      <g transform="translate(412,62)">
+        <path d="M-18,8 C-24,8 -24,20 -18,20" stroke="#607D53" stroke-width="2" fill="none"/>
+        <path d="M18,8 C24,8 24,20 18,20" stroke="#607D53" stroke-width="2" fill="none"/>
+        <path d="M-14,0 L14,0 L10,24 L6,30 L6,36 L12,36 L12,40 L-12,40 L-12,36 L-6,36 L-6,30 L-10,24 Z"
+              fill="#607D53"/>
+        <!-- Git Merge Icon -->
+        <circle cx="-3" cy="10" r="2.5" fill="#DFF2D8" opacity="0.9"/>
+        <circle cx="5" cy="22" r="2.5" fill="#DFF2D8" opacity="0.9"/>
+        <path d="M-3,13 L-3,20 C-3,23 0,24 3,24 L2.5,24" stroke="#DFF2D8" stroke-width="1.2" fill="none" opacity="0.9"/>
+        <line x1="-3" y1="13" x2="-3" y2="26" stroke="#DFF2D8" stroke-width="1.2" opacity="0.5"/>
+      </g>
+
+      <text x="412" y="140" font-family="'Outfit',sans-serif" font-size="11" font-weight="700"
+            fill="#DFF2D8" text-anchor="middle">Pull Shark</text>
+      <text x="412" y="156" font-family="'Outfit',sans-serif" font-size="9" font-weight="900"
+            fill="#607D53" text-anchor="middle" letter-spacing="2">S</text>
+    </g>
+
+    <!-- ═══ TROPHY 4: REPO CREATOR — A ═══ -->
+    <g class="t-cell" style="animation-delay:1.0s">
+      <rect x="502" y="48" width="140" height="120" rx="10" ry="10"
+            fill="rgba(163,184,153,0.04)" stroke="rgba(59,80,51,0.15)" stroke-width="1"/>
+
+      <g transform="translate(572,62)">
+        <path d="M-18,8 C-24,8 -24,20 -18,20" stroke="#3B5033" stroke-width="2" fill="none"/>
+        <path d="M18,8 C24,8 24,20 18,20" stroke="#3B5033" stroke-width="2" fill="none"/>
+        <path d="M-14,0 L14,0 L10,24 L6,30 L6,36 L12,36 L12,40 L-12,40 L-12,36 L-6,36 L-6,30 L-10,24 Z"
+              fill="#3B5033"/>
+        <!-- Repo/Book Icon -->
+        <rect x="-7" y="8" width="14" height="18" rx="2" fill="none" stroke="#A3B899" stroke-width="1.2"/>
+        <line x1="-4" y1="12" x2="4" y2="12" stroke="#A3B899" stroke-width="0.8"/>
+        <line x1="-4" y1="15" x2="2" y2="15" stroke="#A3B899" stroke-width="0.8"/>
+        <line x1="-4" y1="18" x2="3" y2="18" stroke="#A3B899" stroke-width="0.8"/>
+      </g>
+
+      <text x="572" y="140" font-family="'Outfit',sans-serif" font-size="11" font-weight="700"
+            fill="#DFF2D8" text-anchor="middle">Repo Creator</text>
+      <text x="572" y="156" font-family="'Outfit',sans-serif" font-size="9" font-weight="900"
+            fill="#3B5033" text-anchor="middle" letter-spacing="2">A</text>
+    </g>
+
+    <!-- ═══ HOLOGRAPHIC SHINE SWEEP ═══ -->
+    <rect x="-400" y="0" width="380" height="200" fill="url(#t-shine)">
+      <animate attributeName="x" from="-400" to="700" dur="5s" repeatCount="indefinite" begin="2.5s"/>
+    </rect>
+
+    <!-- Border -->
+    <rect width="660" height="200" rx="12" ry="12" fill="none" stroke="rgba(163,184,153,0.2)" stroke-width="1.2"/>
+
+    <!-- Annotation -->
+    <text x="630" y="190" font-family="'JetBrains Mono',monospace" font-size="7" font-weight="700"
+          fill="#607D53" opacity="0.5" text-anchor="end" class="t-blink">[ LOCAL TEMPLATE · PLACEHOLDER STATUS ]</text>
+  </g>
+</svg>

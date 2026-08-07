@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 195" width="460" height="195">
+  <defs>
+    <linearGradient id="s-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F150E"/>
+      <stop offset="100%" stop-color="#080B07"/>
+    </linearGradient>
+    <linearGradient id="s-ring-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A3B899"/>
+      <stop offset="50%" stop-color="#C4D7B2"/>
+      <stop offset="100%" stop-color="#6B8F5B"/>
+    </linearGradient>
+    <linearGradient id="s-ring-track" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A2318"/>
+      <stop offset="100%" stop-color="#0E130D"/>
+    </linearGradient>
+    <radialGradient id="s-rank-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#C4D7B2" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#C4D7B2" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="s-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="s-glow-sm" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur stdDeviation="2.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="s-clip"><rect width="460" height="195" rx="12" ry="12"/></clipPath>
+  </defs>
+
+  <style>
+    .s-row { opacity:0; animation: s-slideIn 0.55s ease-out forwards; }
+    @keyframes s-slideIn {
+      from { opacity:0; transform:translateX(18px); }
+      to   { opacity:1; transform:translateX(0); }
+    }
+    .s-blink { animation: s-bl 2s step-end infinite; }
+    @keyframes s-bl { 50%{ opacity:0.12; } }
+    .s-ring-pulse { animation: s-rp 3s ease-in-out infinite alternate; }
+    @keyframes s-rp {
+      0%   { opacity:0.55; }
+      100% { opacity:1; }
+    }
+    .s-rank-fade { opacity:0; animation: s-rf 0.6s ease-out 1.6s forwards; }
+    @keyframes s-rf { to { opacity:1; } }
+  </style>
+
+  <g clip-path="url(#s-clip)">
+    <!-- Background -->
+    <rect width="460" height="195" fill="url(#s-bg)"/>
+
+    <!-- Subtle Grid -->
+    <g stroke="rgba(163,184,153,0.025)" stroke-width="0.6">
+      <line x1="0" y1="48" x2="460" y2="48"/>
+      <line x1="0" y1="96" x2="460" y2="96"/>
+      <line x1="0" y1="144" x2="460" y2="144"/>
+      <line x1="115" y1="0" x2="115" y2="195"/>
+      <line x1="230" y1="0" x2="230" y2="195"/>
+      <line x1="345" y1="0" x2="345" y2="195"/>
+    </g>
+
+    <!-- Corner Tech Dots -->
+    <circle cx="18" cy="18" r="2" fill="rgba(163,184,153,0.08)"/>
+    <circle cx="442" cy="18" r="2" fill="rgba(163,184,153,0.08)"/>
+    <circle cx="18" cy="177" r="2" fill="rgba(163,184,153,0.08)"/>
+    <circle cx="442" cy="177" r="2" fill="rgba(163,184,153,0.08)"/>
+
+    <!-- ═══ LEFT: RANK RING ═══ -->
+    <g>
+      <!-- Rank Glow Backdrop -->
+      <circle cx="82" cy="105" r="55" fill="url(#s-rank-glow)" class="s-ring-pulse"/>
+
+      <!-- Outer decorative ring -->
+      <circle cx="82" cy="105" r="50" fill="none" stroke="rgba(163,184,153,0.06)" stroke-width="1" stroke-dasharray="3,5"/>
+
+      <!-- Ring Track -->
+      <circle cx="82" cy="105" r="42" fill="none" stroke="url(#s-ring-track)" stroke-width="7"/>
+
+      <!-- Animated Ring Fill — 85% fill = 0.85 × 2π×42 ≈ 224 of 264 -->
+      <circle cx="82" cy="105" r="42" fill="none" stroke="url(#s-ring-grad)" stroke-width="7"
+              stroke-dasharray="264" stroke-dashoffset="264" stroke-linecap="round"
+              filter="url(#s-glow-sm)" transform="rotate(-90 82 105)" class="s-ring-pulse">
+        <animate attributeName="stroke-dashoffset" from="264" to="40" dur="2s"
+                 begin="0.3s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.25,0.1,0.25,1"/>
+      </circle>
+
+      <!-- Inner Rank Circle -->
+      <circle cx="82" cy="105" r="30" fill="rgba(14,19,13,0.9)" stroke="rgba(163,184,153,0.12)" stroke-width="0.8"/>
+
+      <!-- Rank Letter -->
+      <text x="82" y="101" font-family="'Outfit','Inter',sans-serif" font-size="11"
+            font-weight="800" fill="#87A97B" text-anchor="middle" letter-spacing="2" class="s-rank-fade">RANK</text>
+      <text x="82" y="126" font-family="'Outfit','Inter',sans-serif" font-size="32"
+            font-weight="900" fill="#DFF2D8" text-anchor="middle" filter="url(#s-glow)" class="s-rank-fade">S+</text>
+    </g>
+
+    <!-- ═══ RIGHT: STAT ROWS ═══ -->
+    <g>
+      <!-- Title -->
+      <text x="165" y="30" font-family="'Outfit','Inter',sans-serif" font-size="13"
+            font-weight="900" fill="#87A97B" letter-spacing="1.5">KHALIL SHAKIR'S GITHUB STATS</text>
+
+      <!-- Row 1: Total Stars -->
+      <g class="s-row" style="animation-delay:0.4s">
+        <!-- Star icon -->
+        <g transform="translate(165,42)" fill="none" stroke="#C4D7B2" stroke-width="1.2" stroke-linejoin="round">
+          <polygon points="7,1 8.8,5.2 13.4,5.5 9.9,8.5 10.9,13 7,10.6 3.1,13 4.1,8.5 0.6,5.5 5.2,5.2"/>
+        </g>
+        <text x="183" y="54" font-family="'Outfit',sans-serif" font-size="12" fill="#A3B899">Total Stars Earned</text>
+        <text x="430" y="54" font-family="'JetBrains Mono',monospace" font-size="12" font-weight="700" fill="#DFF2D8" text-anchor="end">326</text>
+        <line x1="165" y1="60" x2="430" y2="60" stroke="rgba(163,184,153,0.08)" stroke-width="0.6"/>
+      </g>
+
+      <!-- Row 2: Total Commits -->
+      <g class="s-row" style="animation-delay:0.6s">
+        <g transform="translate(165,68)" fill="none" stroke="#C4D7B2" stroke-width="1.2">
+          <circle cx="7" cy="7" r="5"/><line x1="7" y1="4" x2="7" y2="10"/><line x1="7" y1="7" x2="10" y2="4.5"/>
+        </g>
+        <text x="183" y="80" font-family="'Outfit',sans-serif" font-size="12" fill="#A3B899">Total Commits (2026)</text>
+        <text x="430" y="80" font-family="'JetBrains Mono',monospace" font-size="12" font-weight="700" fill="#DFF2D8" text-anchor="end">1,482</text>
+        <line x1="165" y1="86" x2="430" y2="86" stroke="rgba(163,184,153,0.08)" stroke-width="0.6"/>
+      </g>
+
+      <!-- Row 3: Pull Requests -->
+      <g class="s-row" style="animation-delay:0.8s">
+        <g transform="translate(165,94)" fill="none" stroke="#C4D7B2" stroke-width="1.2">
+          <path d="M4,2 L4,12"/><circle cx="4" cy="12" r="1.5"/><path d="M10,12 L10,5 C10,3 8,2 6,2"/><circle cx="10" cy="12" r="1.5"/>
+        </g>
+        <text x="183" y="106" font-family="'Outfit',sans-serif" font-size="12" fill="#A3B899">Pull Requests</text>
+        <text x="430" y="106" font-family="'JetBrains Mono',monospace" font-size="12" font-weight="700" fill="#DFF2D8" text-anchor="end">112</text>
+        <line x1="165" y1="112" x2="430" y2="112" stroke="rgba(163,184,153,0.08)" stroke-width="0.6"/>
+      </g>
+
+      <!-- Row 4: Issues -->
+      <g class="s-row" style="animation-delay:1.0s">
+        <g transform="translate(165,120)" fill="none" stroke="#C4D7B2" stroke-width="1.2">
+          <circle cx="7" cy="7" r="6"/><line x1="7" y1="4" x2="7" y2="8"/><circle cx="7" cy="10.5" r="0.6" fill="#C4D7B2"/>
+        </g>
+        <text x="183" y="132" font-family="'Outfit',sans-serif" font-size="12" fill="#A3B899">Issues Resolved</text>
+        <text x="430" y="132" font-family="'JetBrains Mono',monospace" font-size="12" font-weight="700" fill="#DFF2D8" text-anchor="end">48</text>
+        <line x1="165" y1="138" x2="430" y2="138" stroke="rgba(163,184,153,0.08)" stroke-width="0.6"/>
+      </g>
+
+      <!-- Row 5: Contributed To -->
+      <g class="s-row" style="animation-delay:1.2s">
+        <g transform="translate(165,146)" fill="none" stroke="#C4D7B2" stroke-width="1.2">
+          <rect x="1" y="1" width="12" height="12" rx="2"/><path d="M5,5 L9,5 M5,8 L8,8"/>
+        </g>
+        <text x="183" y="158" font-family="'Outfit',sans-serif" font-size="12" fill="#A3B899">Contributed To (last year)</text>
+        <text x="430" y="158" font-family="'JetBrains Mono',monospace" font-size="12" font-weight="700" fill="#DFF2D8" text-anchor="end">23</text>
+        <line x1="165" y1="164" x2="430" y2="164" stroke="rgba(163,184,153,0.08)" stroke-width="0.6"/>
+      </g>
+    </g>
+
+    <!-- Border -->
+    <rect width="460" height="195" rx="12" ry="12" fill="none" stroke="rgba(163,184,153,0.2)" stroke-width="1.2"/>
+
+    <!-- Template Annotation -->
+    <text x="430" y="184" font-family="'JetBrains Mono',monospace" font-size="7" font-weight="700"
+          fill="#607D53" opacity="0.5" text-anchor="end" class="s-blink">[ LOCAL TEMPLATE · PLACEHOLDER DATA ]</text>
+  </g>
+</svg>
