@@ -4,45 +4,36 @@
 #
 # Usage in README.md:
 #   ![Snake](https://raw.githubusercontent.com/Khalil-Shakir/Khalil-Shakir/output/github-snake-dark.svg)
-
 name: Generate Contribution Snake
 
 on:
   schedule:
-    # Runs every day at 00:00 UTC
     - cron: "0 0 * * *"
   workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - name: Generate Snake
-        uses: Platane/snk/svg-only@v3
+        uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
-
-          # Colors are passed as query-string params on output filenames.
-          # color_dots takes exactly 5 comma-separated hex values:
-          #   [0] = empty cell, [1-4] = contribution intensity (low → high)
-          # color_snake = body color of the snake
-          #
-          # Olive & Sage Green Palette:
-          #   empty:  #0E130D  (near-black olive)
-          #   lvl 1:  #1E2B1A  (dark olive)
-          #   lvl 2:  #3B5033  (forest olive)
-          #   lvl 3:  #607D53  (medium sage)
-          #   lvl 4:  #87A97B  (sage green)
-          #   snake:  #C4D7B2  (light sage)
-
           outputs: |
             dist/github-snake-dark.svg?color_snake=%23C4D7B2&color_dots=%230E130D,%231E2B1A,%233B5033,%23607D53,%2387A97B
             dist/github-snake.gif?color_snake=%23C4D7B2&color_dots=%230E130D,%231E2B1A,%233B5033,%23607D53,%2387A97B
             dist/github-snake-default.svg
-
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Push to output branch
         uses: crazy-max/ghaction-github-pages@v4
